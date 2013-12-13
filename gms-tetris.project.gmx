@@ -29,11 +29,19 @@
       <script>scripts\scr_block_check_collision.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_ui</font>
+  </fonts>
   <objects name="objects">
     <objects name="Blocks">
       <object>objects\obj_block_parent</object>
       <object>objects\obj_block_O</object>
       <object>objects\obj_block_L</object>
+      <object>objects\obj_block_J</object>
+      <object>objects\obj_block_I</object>
+      <object>objects\obj_block_T</object>
+      <object>objects\obj_block_Z</object>
+      <object>objects\obj_block_S</object>
     </objects>
     <object>objects\obj_grid_manager</object>
   </objects>

@@ -29,14 +29,14 @@
 event_inherited()
 
 // rotação inicial
-grid = ds_grid_create(2, 3)
+grid = ds_grid_create(3, 2)
 grid_width = ds_grid_width(grid)
 grid_height = ds_grid_height(grid)
 
-ds_grid_add_region(grid, 0, 0, 0, grid_height - 1, block_spr)
-ds_grid_set(grid, grid_width - 1, grid_height - 1, block_spr)
+ds_grid_add_region(grid, 0, 0, 1, 0, block_spr)
+ds_grid_add_region(grid, 1, 1, 2, 1, block_spr)
 
-block_rot_max = 3
+block_rot_max = 1
 
 block_x = floor((GAME_WIDTH / 2) - (grid_width / 2))
 </string>
@@ -66,25 +66,14 @@ event_inherited()
 
 if (!can_rotate) exit
 
-var h = grid_height,
-  w = grid_width
-
 switch(block_rot_current) {
   case 0:
-    ds_grid_add_region(grid, 0, 0, 0, h - 1, block_spr)
-    ds_grid_set(grid, w - 1, h - 1, block_spr)
+    ds_grid_add_region(grid, 0, 0, 1, 0, block_spr)
+    ds_grid_add_region(grid, 1, 1, 2, 1, block_spr)
     break
   case 1:
-    ds_grid_add_region(grid, 0, 0, w - 1, 0, block_spr)
-    ds_grid_set(grid, 0, 1, block_spr)
-    break
-  case 2:
-    ds_grid_add_region(grid, 1, 0, 1, h - 1, block_spr)
-    ds_grid_set(grid, 0, 0, block_spr)
-    break
-  case 3:
-    ds_grid_add_region(grid, 0, 1, w - 1, 1, block_spr)
-    ds_grid_set(grid, w - 1, 0, block_spr)
+    ds_grid_add_region(grid, 0, 1, 0, 2, block_spr)
+    ds_grid_add_region(grid, 1, 0, 1, 1, block_spr)
     break
 }
 </string>

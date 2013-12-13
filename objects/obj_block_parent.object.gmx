@@ -38,6 +38,9 @@ block_rot_current = 0
 
 // cor (sprite) do bloco
 block_spr = scr_get_random_block_color() + 1
+
+// altura inicial
+block_y = 0
 </string>
           </argument>
         </arguments>
@@ -326,15 +329,27 @@ var test_grid,
 
 test_grid = ds_grid_create(h, w)
 
-ds_grid_add_grid_region(test_grid, global.game_grid, bx, by, bx + h - 1, by + w - 1, 0, 0)
+if (bx + h &gt;= GAME_WIDTH) {
+  bx = GAME_WIDTH - h
+}
 
-ds_grid_print(test_grid)
+if (by + w &gt;= GAME_HEIGHT) {
+  by = GAME_HEIGHT - w
+}
+
+ds_grid_add_grid_region(test_grid, global.game_grid, bx, by, bx + h - 1, by + w - 1, 0, 0)
 
 if (ds_grid_empty(test_grid)) {
   can_rotate = true
   block_rot_current++
-  if (block_rot_current &gt; block_rot_max) 
-    block_rot_current = 0
+  if (block_rot_current &gt; block_rot_max) block_rot_current = 0
+
+  block_x = bx
+  block_y = by
+  ds_grid_resize(grid, h, w)
+  ds_grid_clear(grid, 0)
+  grid_width = h
+  grid_height = w
 } else {
   can_rotate = false
 }
