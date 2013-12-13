@@ -37,10 +37,33 @@ global.game_grid = game_grid
 // step counter
 steps_to_fall = room_speed
 
-// array que guarda o index de cada linha que precisa ser limpada
-lines_to_clear = ds_queue_create()
-
 global.current_block = -1
+
+global.score = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// avoid memory leak
+ds_grid_destroy(game_grid)
 </string>
           </argument>
         </arguments>
@@ -88,6 +111,10 @@ var block, w, h, gg, r, c
             <string>/// create a block, if necessary
 if (global.current_block == -1) {
   global.current_block = scr_create_random_block_obj()
+  if (scr_block_check_collision(global.current_block)) {
+    room_goto(rm_game_over)
+    exit
+  }
 }
 
 block = global.current_block

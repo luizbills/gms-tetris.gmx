@@ -89,7 +89,7 @@ ds_grid_destroy(grid)
           <argument>
             <kind>1</kind>
             <string>/// destroy the block and add it to game grid
-var gg, bw, bh, bx, by, r, c, clear_this_line
+var gg, bw, bh, bx, by, r, c, clear_this_line, cleared_lines = 0
 
 gg = global.game_grid
 
@@ -110,7 +110,15 @@ for (r = 1; r &lt; GAME_HEIGHT; r++) {
     }
   }
   
-  if (clear_this_line) ds_grid_remove_line(gg, r)
+  if (clear_this_line) {
+    ds_grid_remove_line(gg, r)
+    cleared_lines++
+  }
+}
+
+if (cleared_lines &gt; 0) {
+  global.score += cleared_lines * 100
+  if (cleared_lines &gt; 1) global.score += cleared_lines * 50
 }
 
 instance_destroy()

@@ -28,9 +28,11 @@
       <script>scripts\scr_create_random_block_obj.gml</script>
       <script>scripts\scr_block_check_collision.gml</script>
     </scripts>
+    <script>scripts\scr_format_score.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_ui</font>
+    <font>fonts\fnt_ui_big</font>
   </fonts>
   <objects name="objects">
     <objects name="Blocks">
@@ -44,10 +46,13 @@
       <object>objects\obj_block_S</object>
     </objects>
     <object>objects\obj_grid_manager</object>
+    <object>objects\obj_text_game_over</object>
+    <object>objects\obj_game_ui</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
     <room>rooms\rm_game</room>
+    <room>rooms\rm_game_over</room>
   </rooms>
   <constants number="2">
     <constant name="GAME_HEIGHT">16</constant>
