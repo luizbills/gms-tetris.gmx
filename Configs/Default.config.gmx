@@ -221,9 +221,9 @@
     <option_textureGroup1_nocropping>0</option_textureGroup1_nocropping>
     <option_textureGroup_count>1</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
-    <option_tizen_app_id>http://yourdomain/gms-tetris</option_tizen_app_id>
+    <option_tizen_app_id></option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
-    <option_tizen_display_name>gms-tetris</option_tizen_display_name>
+    <option_tizen_display_name>tetriiis</option_tizen_display_name>
     <option_tizen_flurry_enable>0</option_tizen_flurry_enable>
     <option_tizen_flurry_id></option_tizen_flurry_id>
     <option_tizen_google_analytics_enable>0</option_tizen_google_analytics_enable>
@@ -235,8 +235,8 @@
     <option_tizen_orientation>0</option_tizen_orientation>
     <option_tizen_scaling>1</option_tizen_scaling>
     <option_tizen_splash_png>Configs\Default\tizen\splash.png</option_tizen_splash_png>
-    <option_tizen_texture_page>1024</option_tizen_texture_page>
-    <option_tizen_usesplash>False</option_tizen_usesplash>
+    <option_tizen_texture_page>512</option_tizen_texture_page>
+    <option_tizen_usesplash>True</option_tizen_usesplash>
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>100</option_version>
