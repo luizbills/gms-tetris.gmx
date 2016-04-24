@@ -5,7 +5,7 @@ grid = argument0
 w = ds_grid_width(grid)
 h = ds_grid_height(grid)
 
-repeat (2) show_debug_message("") // quebras de linha
+repeat (2) show_debug_message("") // line breaks
 
 for (r = 0; r < h; r++) {
   str = "   "
